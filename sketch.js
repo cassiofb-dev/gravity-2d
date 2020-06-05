@@ -1,5 +1,5 @@
 let width = screen.width, height = screen.height;
-let universe, x, y;
+let universe, x, y, r = 10, m = 50;
 
 function setup() {
 	createCanvas(width, height);
@@ -21,7 +21,13 @@ function mousePressed() {
 }
 
 function mouseReleased() {
-	universe.bodies.push(new Body([x,y], [(mouseX - x)/10, (mouseY - y)/10]));
+	universe.bodies.push(new Body(
+		[x,y],
+		[(mouseX - x)/10, (mouseY - y)/10],
+		[0,0],
+		r,
+		m
+	));
 }
 
 function keyTyped() {
@@ -31,6 +37,26 @@ function keyTyped() {
 			break;
 		case 'r':
 			universe = new Universe();
+			break;
+		case '1':
+			r = 10;
+			m = 50;
+			break;
+		case '2':
+			r = 20;
+			m = 100;
+			break;
+		case '3':
+			r = 30;
+			m = 200;
+			break;
+		case '4':
+			r = 40;
+			m = 1000;
+			break;
+		case '5':
+			r = 50;
+			m = 100000;
 			break;
 	}
 }
