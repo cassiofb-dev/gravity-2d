@@ -5,8 +5,9 @@ function setup() {
 	createCanvas(width, height);
 	universe = new Universe();
 	universe.bodies.push(new Body([width/2,height/2],[0,0],[0,0],50,10000,true,true));
-	universe.bodies.push(new Body([width/2,height/3],[10,0],[0,0],20,100));
-	universe.bodies.push(new Body([width/2,height/10],[3.2,0],[0,0],10,50));
+	universe.bodies.push(new Body([width/2,height/2 + 75],[14,0],[0,0],15,50));
+	universe.bodies.push(new Body([width/2,height/2 + 150],[8,0],[0,0],15,50));
+	universe.bodies.push(new Body([width/2,height/2 + 300],[-6,0],[0,0],10,25));
 }
 
 function draw() {

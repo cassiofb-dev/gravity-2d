@@ -47,7 +47,11 @@ class Body {
 	}
 
 	render() {
-		fill([abs(255 - this.vel[0]*25),abs(255 - this.vel[1]*25),255 - this.mass/500]);
+		fill([
+			25*(abs(this.vel[0])+abs(this.vel[1])),
+			50*(abs(this.acc[0])+abs(this.acc[1])),
+			255 - this.mass/1000]
+		);
 		circle(this.pos[0],this.pos[1],this.rad);
 	}
 
